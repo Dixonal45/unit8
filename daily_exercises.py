@@ -36,16 +36,19 @@ root = Tk()
 # problem 3
 
 def convert():
+    celsius = (degrees_f.get() - 32) * (5/9)
+    degrees_c.set(celsius)
+
 
 degrees_f = Label(root, text="degrees F:")
 degrees_f.grid(row=1, column=1)
-f_entry = Entry(root)
+f_entry = Entry(root, textvaribale=degrees_f)
 f_entry.grid(row=1, column=2)
 degrees_c = Label(root, text="degrees C:")
 degrees_c.grid(row=2, column=1)
-c_label = Label(root)
+c_label = Label(root, textvariable=degrees_c)
 c_label.grid(row=2, column=2)
-convert = Button(root, text="Convert")
+convert = Button(root, text="Convert", command=convert)
 convert.grid(row=3, column=2)
 
 

@@ -5,6 +5,7 @@
 from tkinter import *
 
 root = Tk()
+root.configure(background="powder blue")
 
 
 def add_zero():
@@ -122,11 +123,16 @@ def negative():
 
 display_result = StringVar()
 
+ariana_pic = PhotoImage(file="ariana_20.png")
+liana_pic = PhotoImage(file="liana_20.png")
 title = Label(root, text="Calculator", font="Helvetica 24")
 title.grid(row=1, column=1, columnspan=4)
+title.configure(background="powder blue")
 
 result_bar = Entry(root, textvariable=display_result, width=20, justify="right")
 result_bar.grid(row=2, column=1, columnspan=4)
+result_bar.configure(background="black")
+result_bar.configure(foreground="powder blue")
 
 clear_button = Button(root, text="Clear", width=4, font="Helvetica 18", command=clear)
 clear_button.grid(row=3, column=1, sticky="W")
@@ -155,7 +161,7 @@ multiply_button.grid(row=4, column=4, sticky="E")
 four_button = Button(root, text="4", width=4, font="Helvetica 18", command=add_four)
 four_button.grid(row=5, column=1, sticky="W")
 
-five_button = Button(root, text="5", width=4, font="Helvetica 18", command=add_five)
+five_button = Button(root, text="5", width=42, font="Helvetica 18", command=add_five, image=ariana_pic)
 five_button.grid(row=5, column=2)
 
 six_button = Button(root, text="6", width=4, font="Helvetica 18", command=add_six)
@@ -164,7 +170,7 @@ six_button.grid(row=5, column=3)
 subtract_button = Button(root, text="-", width=4, font="Helvetica 18", command=subtract)
 subtract_button.grid(row=5, column=4, sticky="E")
 
-one_button = Button(root, text="1", width=4, font="Helvetica 18", command=add_one)
+one_button = Button(root, text="1", width=42, font="Helvetica 18", command=add_one, image=liana_pic)
 one_button.grid(row=6, column=1, sticky="W")
 
 two_button = Button(root, text="2", width=4, font="Helvetica 18", command=add_two)
